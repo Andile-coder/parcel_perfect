@@ -2,7 +2,7 @@ const sendgrid = require("@sendgrid/mail");
 const { loggers } = require("winston");
 
 const send = async (order) => {
-    loggers.info({'sendgrid:order' : mail})
+    loggers.info({'sendgrid:order' : order})
 
     const mail = {
         from: "sales@musebeauty.co.za",
