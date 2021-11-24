@@ -1,6 +1,8 @@
 const sendgrid = require("@sendgrid/mail");
+const { loggers } = require("winston");
 
 const send = async (order) => {
+    loggers.info({'sendgrid:order' : mail})
 
     const mail = {
         from: "sales@musebeauty.co.za",
@@ -25,9 +27,11 @@ const send = async (order) => {
         template_id: "d-3975c310a9f24347ae17a09515e31a4e"
     };
 
-    if (process.env.ENVIRONMENT && process.env.ENVIRONMENT) {
+    if (process.env.ENVIRONMENT) {
         sendgrid.setApiKey(process.env.SENDGRID_KEY)
-        return await sendgrid.send(mail)
+        const response = await sendgrid.send(mail);
+        loggers.info({'sendgrid:response' : response})
+        return response
     } else {
         return '.env.ENVIRONMENT variable not saved'
     }
