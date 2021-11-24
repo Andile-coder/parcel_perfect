@@ -83,7 +83,7 @@ app.post("/createOrder", async (request, response) => {
     }
 });
 
-app.put("/completeOrder", async (request, response) => {
+app.post("/completeOrder", async (request, response) => {
     const wcorder = request.body;
     logger.log({ 'completeOrder - request.body': wcorder })
     if (wcorder.status === "completed") {
