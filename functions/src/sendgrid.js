@@ -8,11 +8,7 @@ const send = async (order) => {
         from: "sales@musebeauty.co.za",
         personalizations: [
             {
-                to: [
-                    {
-                        email: order.email
-                    }
-                ],
+                to: order.email,
                 dynamic_template_data: {
                     receiver_name: order.name,
                     waybill_number: order.waybillno,
@@ -31,7 +27,7 @@ const send = async (order) => {
         sendgrid.setApiKey(process.env.SENDGRID_KEY)
 
         try {
-            const response = await sendgrid.send(mail);
+            const response = await sendgrid.    send(mail);
             logger.info({'sendgrid:response' : response})
             return response
         }
