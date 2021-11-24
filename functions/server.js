@@ -79,8 +79,12 @@ app.put("/completeOrder", async (request, response) => {
     const wcorder = request.body;
     if (wcorder.status === "completed") {
         const order = await fetchOrder(wcorder.number);
-        const result = await send(order);
-        response.send(result);
+        if (order) {
+            const result = await send(order);
+            response.send(result);
+        } else {
+            response.status(404).send();
+        }
     }
     response.send();
 });
