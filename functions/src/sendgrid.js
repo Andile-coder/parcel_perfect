@@ -27,7 +27,7 @@ const send = async (order) => {
         sendgrid.setApiKey(process.env.SENDGRID_KEY)
 
         try {
-            const response = await sendgrid.    send(mail);
+            const response = await sendgrid.send(mail);
             logger.info({'sendgrid:response' : response})
             return response
         }
