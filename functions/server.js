@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (request, response) => {
-    response.send("🏄‍♂️ Sup Baz! 🏄‍♂️");
-    logger.info('🏄‍♂️ API ONLINE!! 🏄‍♂️');
+    response.send("🏄‍♂️ Sup Baz from Muse! 🏄‍♂️");
+    logger.info('🏄‍♂️ Muse API ONLINE!! 🏄‍♂️');
 });
 
 app.post("/createOrder", async (request, response) => {
