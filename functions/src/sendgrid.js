@@ -29,7 +29,7 @@ const send = async (order) => {
         try {
             const response = await sendgrid.send(mail);
             logger.info({'sendgrid:response' : response})
-            return response
+            return response.status(200).json(response);
         }
         catch(error){
             logger.info({'sendgridSendmail:error' : error})
