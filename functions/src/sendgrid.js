@@ -29,15 +29,15 @@ const send = async (order) => {
         try {
             const response = await sendgrid.send(mail);
             logger.info({'sendgrid:response' : response})
-            return response.status(200).json(response);
+            return response;
         }
         catch(error){
             logger.info({'sendgridSendmail:error' : error})
-            return response.status(200).json("sendgridSendmail:error");
+            return "sendgridSendmail:error";
         }
         
     } else {
-        return response.status(200).json(".env.ENVIRONMENT variable not saved");
+        return ".env.ENVIRONMENT variable not saved";
     }
     
 }
