@@ -20,7 +20,7 @@ if (process.env.ENVIRONMENT !== "development")
         awsSecretKey: process.env.CLOUDWATCH_SECRET_ACCESS_KEY,
         awsRegion: process.env.CLOUDWATCH_REGION,
         messageFormatter: ({ level, message, additionalInfo }) =>
-            `[${level}] : ${message} 
+            `[${level}] : ${JSON.stringify(message)} 
             \n Additional Info: ${JSON.stringify(additionalInfo) ? JSON.stringify(additionalInfo) : ""}`
     };
     
