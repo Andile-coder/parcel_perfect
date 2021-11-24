@@ -1,0 +1,43 @@
+https://gfweb34777.pperfect.com/ecomService/v16/Json?params=
+{
+    "details":
+        {
+            "specinstruction":"This is a test",
+            "reference":"XN1225",
+            "origperadd1":"102 Lilian Ngoyi Road",
+            "origperadd2":"Address line 2",
+            "origperadd3":"Address line 3",
+            "origperadd4":"Address line 4",
+            "origperphone":"012345678",
+            "origpercell":"012345678",
+            "origplace":10003061,
+            "origtown":"MORNINGSIDE, Durban",
+            "origpers":"MINT MARKETING T/A MUSE BEAUTY",
+            "origpercontact":"TASNEEM",
+            "origperpcode":"4001",
+            "destperadd1":"2000 Hornbill Road",
+            "destperadd2":"Address line 2",
+            "destperadd3":"Address line 3",
+            "destperadd4":"Address line 4",
+            "destperphone":"0834513552",
+            "destpercell":"0834513552",
+            "destplace":10447,
+            "desttown":"DAINFERN VALLEY, Midrand",
+            "destpers":"BasilMoodie",
+            "destpercontact":"Basil",
+            "destperpcode":"2191"
+        },
+    "contents":
+        [
+            {
+                "item":1,
+                "desc":"Test",
+                "pieces":1,
+                "dim1":1,
+                "dim2":1,
+                "dim3":1,
+                "actmass":1
+            }
+        ]
+    }
+    &method=requestQuote&class=Quote
