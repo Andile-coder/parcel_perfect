@@ -90,7 +90,7 @@ app.put("/completeOrder", async (request, response) => {
         const order = await fetchOrder(wcorder.number);
         if (order) {
             const result = await send(order);
-            response.send(result);
+            response.status(200).json(result);
         } else {
             response.status(200).json("order not in database");
         }
