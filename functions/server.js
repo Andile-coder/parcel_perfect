@@ -85,8 +85,9 @@ app.put("/completeOrder", async (request, response) => {
         } else {
             response.status(404).send();
         }
-    }
-    response.send();
+    }else {
+        response.status(200).json("incorrect status");
+    }    
 });
 
 const startDevServer = () => {
