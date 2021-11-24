@@ -29,11 +29,19 @@ const send = async (order) => {
 
     if (process.env.ENVIRONMENT) {
         sendgrid.setApiKey(process.env.SENDGRID_KEY)
-        const response = await sendgrid.send(mail);
-        logger.info({'sendgrid:response' : response})
-        return response
+
+        try {
+            const response = await sendgrid.send(mail);
+            logger.info({'sendgrid:response' : response})
+            return response
+        }
+        catch(error){
+            logger.info({'sendgridSendmail:error' : error})
+            return response.status(200).json("sendgridSendmail:error");
+        }
+        
     } else {
-        return '.env.ENVIRONMENT variable not saved'
+        return response.status(200).json(".env.ENVIRONMENT variable not saved");
     }
     
 }
