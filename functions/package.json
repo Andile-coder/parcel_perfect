@@ -15,7 +15,7 @@
   "main": "index.js",
   "dependencies": {
     "@sendgrid/mail": "^7.5.0",
-    "@thinwood/parcelperfect": "^1.0.6",
+    "@themidastouch/parcelperfect": "https://github.com/uxshahil/parcelperfect.git",    
     "aws-sdk": "^2.1035.0",
     "btoa": "^1.2.1",
     "dotenv": "^10.0.0",

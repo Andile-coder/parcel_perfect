@@ -1,4 +1,4 @@
-const { getPlacesByPostcodeAsync } = require("@thinwood/parcelperfect/src/places");
+const { getPlacesByPostcodeAsync } = require("@themidastouch/parcelperfect/src/places");
 const logger = require("./logger");
 
 const fetchOrigin = async (token) => {

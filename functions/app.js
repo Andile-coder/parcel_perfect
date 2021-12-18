@@ -6,9 +6,9 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
 
-const { authenticateAsync } = require("@thinwood/parcelperfect/src/authentication");
-const { quoteToCollection, updateService } = require("@thinwood/parcelperfect/src/quotes");
-const { loadConfig } = require("@thinwood/parcelperfect/src/config");
+const { authenticateAsync } = require("@themidastouch/parcelperfect/src/authentication");
+const { quoteToCollection, updateService } = require("@themidastouch/parcelperfect/src/quotes");
+const { loadConfig } = require("@themidastouch/parcelperfect/src/config");
 
 const createQuote = require("./src/createQuote");
 const fetchDestination = require("./src/fetchDestination");

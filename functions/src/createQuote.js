@@ -1,5 +1,5 @@
 const fetchOrigin = require("./fetchOrigin");
-const { requestQuote } = require("@thinwood/parcelperfect/src/quotes");
+const { requestQuote } = require("@themidastouch/parcelperfect/src/quotes");
 const logger = require("./logger");
 
 const generateQuote = (destination, origin, order) => {
