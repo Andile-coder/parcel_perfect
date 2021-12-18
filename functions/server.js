@@ -56,18 +56,18 @@ app.post("/createOrder", async (request, response) => {
             // response.status(200).json(destination);
 
             if (destination) {
-                // const quote = await createQuote(wcorder, destination, token).catch(error => { logger.error("createQuote", error); });;
-                // order.quoteno = quote.quoteno;
-                // order.update();
+                const quote = await createQuote(wcorder, destination, token).catch(error => { logger.error("createQuote", error); });;
+                order.quoteno = quote.quoteno;
+                order.update();
 
-                // const service = await updateService(quote.quoteno, "ONX", token).catch(error => { logger.error("updateService", error); });;
-                // if (service.errorcode) throw Error(service.errormessage);
+                const service = await updateService(quote.quoteno, "ONX", token).catch(error => { logger.error("updateService", error); });;
+                if (service.errorcode) throw Error(service.errormessage);
 
-                // const collection = await quoteToCollection(quote.quoteno, token).catch(error => { logger.error("quoteToCollection", error); });;
-                // if (collection.errorcode) throw Error(collection.errormessage);
+                const collection = await quoteToCollection(quote.quoteno, token).catch(error => { logger.error("quoteToCollection", error); });;
+                if (collection.errorcode) throw Error(collection.errormessage);
 
-                // order.waybillno = collection.results[0].waybillno;
-                // order.update();
+                order.waybillno = collection.results[0].waybillno;
+                order.update();
 
                 response.json(order);
             } else {
