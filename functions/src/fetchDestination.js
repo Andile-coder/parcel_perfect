@@ -1,11 +1,11 @@
-const { getPlacesByNameAsync } = require("@themidastouch/parcelperfect/src/places");
+const { getPlacesByPostcodeAsync } = require("@themidastouch/parcelperfect/src/places");
 const logger = require("./logger");
 
 const fetchDestination = async (order, token) => {
     const postcode = order.billing.postcode;
     const city = order.billing.city;
 
-    const result = await getPlacesByNameAsync(city, token);
+    const result = await getPlacesByPostcodeAsync(postcode, token);
     logger.log('info', result);
 
     if (result.errorcode) {
