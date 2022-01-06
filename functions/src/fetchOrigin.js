@@ -1,4 +1,5 @@
 const { getPlacesByPostcodeAsync } = require("@themidastouch/parcelperfect/src/places");
+const { getPlacesByNameAsync } = require("@themidastouch/parcelperfect/src/places");
 const logger = require("./logger");
 
 const fetchOrigin = async (token) => {
@@ -13,8 +14,10 @@ const fetchOrigin = async (token) => {
         logger.info({'originPostalcode' : originPostalcode});
         logger.info({'originCity' : originCity});
 
-        const result = await getPlacesByPostcodeAsync(originPostalcode, token);
-        logger.info({"getPlacesByPostcodeAsync" : result});
+        // const result = await getPlacesByPostcodeAsync(originPostalcode, token);
+        const result = await getPlacesByNameAsync(originCity, token);
+        // logger.info({"getPlacesByPostcodeAsync" : result});
+        logger.info({"getPlacesByNameAsync" : result});
 
         if (result.errorcode) {
             logger.error("fetchOrigin", result.errormessage);

@@ -1,11 +1,14 @@
 const { getPlacesByPostcodeAsync } = require("@themidastouch/parcelperfect/src/places");
+const { getPlacesByNameAsync } = require("@themidastouch/parcelperfect/src/places");
 const logger = require("./logger");
 
 const fetchDestination = async (order, token) => {
     const postcode = order.billing.postcode;
     const city = order.billing.city;
 
-    const result = await getPlacesByPostcodeAsync(postcode, token);
+    // const result = await getPlacesByPostcodeAsync(postcode, token);
+    const result = await getPlacesByNameAsync(city, token);
+
     logger.log('info', result);
 
     if (result.errorcode) {
@@ -19,7 +22,8 @@ const fetchDestination = async (order, token) => {
             const destination = filteredPlaces[0];
             return destination;
         } else {
-            logger.log('info', 'Places returned by getPlacesByPostcodeAsync does not match user input city');
+            // logger.log('info', 'Places returned by getPlacesByPostcodeAsync does not match user input city');
+            logger.log('info', 'Places returned by getPlacesByNameAsync does not match user input city');
             return null;
         }
     }
