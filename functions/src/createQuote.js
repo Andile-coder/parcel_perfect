@@ -27,7 +27,7 @@ const generateQuote = (destination, origin, order) => {
             destpercell: order.billing.phone,
             destplace: destination.place,
             desttown: destination.town,
-            destpers: order.billing.first_name + order.billing.last_name,
+            destpers: order.billing.first_name + " " + order.billing.last_name,
             destpercontact: order.billing.first_name,
             destperpcode: destination.pcode,
         },
