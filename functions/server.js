@@ -29,6 +29,7 @@ app.get("/", (request, response) => {
 app.post("/createOrder", async (request, response) => {
   const wcorder = request.body;
   logger.log({ "createOrder - request.body": wcorder });
+  console.log("wcorder", wcorder);
 
   if (wcorder.status === "processing") {
     const order = new Order(
@@ -58,6 +59,7 @@ app.post("/createOrder", async (request, response) => {
           logger.error("authenticateAsync", error);
         }
       );
+
       logger.info({ authenticateAsync: token });
       const destination = await fetchDestination(wcorder, token).catch(
         (error) => {
@@ -73,6 +75,7 @@ app.post("/createOrder", async (request, response) => {
             logger.error("createQuote", error);
           }
         );
+        console.log("+++++++++++++++++++++++++++++++++++++++++=");
         order.quoteno = quote.quoteno;
         order.update();
 

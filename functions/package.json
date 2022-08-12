@@ -12,10 +12,10 @@
   "engines": {
     "node": "14"
   },
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "@sendgrid/mail": "^7.5.0",
-    "@themidastouch/parcelperfect": "https://github.com/uxshahil/parcelperfect.git",    
+    "@themidastouch/parcelperfect": "https://github.com/uxshahil/parcelperfect.git",
     "aws-sdk": "^2.1035.0",
     "btoa": "^1.2.1",
     "dotenv": "^10.0.0",
